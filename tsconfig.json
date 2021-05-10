@@ -22,5 +22,5 @@
     "skipLibCheck": true
   },
   "include": ["app", "types", "../demo-snippets/vue"],
-  "exclude": ["node_modules", "platforms", "app/components/linked-components/tsconfig.json"]
+  "exclude": ["node_modules", "platforms"]
 }
