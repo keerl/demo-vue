@@ -2,6 +2,7 @@
 hooks/
 node_modules/
 platforms/
+app/components/linked-components/*
 
 # Logs
 logs
@@ -19,6 +20,7 @@ yarn-error.log*
 .project
 tmp/
 typings/
+package-lock.json
 
 # Visual Studio Code
 .vscode/*

@@ -1,12 +1,20 @@
-const webpack = require("@nativescript/webpack");
+const webpack = require('@nativescript/webpack');
+
+const { DefinePlugin } = require('webpack');
 
 module.exports = (env) => {
-	webpack.init(env);
+    webpack.init(env);
 
-	// Learn how to customize:
-	// https://docs.nativescript.org/webpack
+    const { development } = env;
 
-	return webpack.resolveConfig();
+    webpack.chainWebpack((config) => {
+        config.plugin('DefinePlugin').tap((args) => {
+            Object.assign(args[0], {
+                isDevelopment: development
+            });
+            return args;
+        });
+    });
+
+    return webpack.resolveConfig();
 };
-
-
