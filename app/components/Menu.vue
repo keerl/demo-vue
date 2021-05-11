@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { demos } from './linked-components/install';
+import { demos } from '../../../demo-snippets/vue/install'
 declare const isDevelopment: boolean;
 
 export default {
