@@ -38,7 +38,6 @@
         "category-general"
     ],
     "dependencies": {
-        "@nativescript-community/plugin-seed": "../plugin",
         "@nativescript/core": "~8.0.0",
         "@nativescript/theme": "~3.0.1",
         "nativescript-vue": "~2.9.0"
