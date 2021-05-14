@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { demos } from '../../../demo-snippets/vue/install'
-declare const isDevelopment: boolean;
+declare const demoRedirect: string;
 
 export default {
     data() {
@@ -25,10 +25,10 @@ export default {
         };
     },
     mounted() {
-        if (isDevelopment) {
-            const Development = demos.find(({ name }) => name === 'Development');
-            if (Development) {
-                this.$navigateTo(Development.component, {
+        if (demoRedirect) {
+            const Demo = demos.find(({ path }) => path === demoRedirect);
+            if (Demo) {
+                this.$navigateTo(Demo.component, {
                     animated: false
                 });
             }

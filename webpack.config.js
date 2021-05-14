@@ -5,13 +5,19 @@ const { DefinePlugin } = require('webpack');
 module.exports = (env) => {
     webpack.init(env);
 
-    const { development } = env;
+    const { redirect } = env;
 
     webpack.chainWebpack((config) => {
         config.plugin('DefinePlugin').tap((args) => {
-            Object.assign(args[0], {
-                isDevelopment: development
-            });
+            if (redirect) {
+                Object.assign(args[0], {
+                    demoRedirect: JSON.stringify(redirect)
+                });
+            } else {
+                Object.assign(args[0], {
+                    demoRedirect: JSON.stringify("")
+                });
+            }
             return args;
         });
     });
